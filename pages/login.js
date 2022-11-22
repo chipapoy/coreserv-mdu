@@ -44,7 +44,7 @@ const Login = () => {
         <GuestLayout>
             <AuthCard
                 logo={
-                    <Link href="/">
+                    <Link href="/login">
                         <a>
                             <Image 
                                 src={`/coreserv_logo.jpg`}
