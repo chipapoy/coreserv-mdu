@@ -48,6 +48,9 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
 
                 setErrors(error.response.data.errors)
             })
+
+
+            router.push('/dashboard')
     }
 
     const forgotPassword = async ({ setErrors, setStatus, email }) => {
@@ -100,7 +103,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
 
     useEffect(() => {
         // if (middleware === 'guest' && redirectIfAuthenticated && user) router.push(redirectIfAuthenticated)
-        if (middleware === 'guest' && redirectIfAuthenticated) router.push(redirectIfAuthenticated)
+        // if (middleware === 'guest' && redirectIfAuthenticated) router.push(redirectIfAuthenticated)
         if (window.location.pathname === "/verify-email" && user?.email_verified_at) router.push(redirectIfAuthenticated)
         // if (middleware === 'auth' && error) logout()
         // if (middleware === 'auth' && error) logout()
