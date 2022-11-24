@@ -11,6 +11,7 @@ import Image from "next/image"
 import { useAuth } from '@/hooks/auth'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import axios from '@/lib/axios'
 
 const Login = () => {
     const router = useRouter()
@@ -19,6 +20,12 @@ const Login = () => {
         middleware: 'guest',
         redirectIfAuthenticated: '/dashboard',
     })
+
+    const test = async () => {
+        const csrf = await axios.get('/sanctum/csrf-cookie')
+
+        console.log(csrf);
+    }
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -32,7 +39,10 @@ const Login = () => {
         } else {
             setStatus(null)
         }
-    })
+
+
+        test();
+    },[])
 
     const submitForm = async event => {
         event.preventDefault()
