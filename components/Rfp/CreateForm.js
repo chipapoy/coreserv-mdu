@@ -17,7 +17,7 @@ const CreateForm = (props) => {
         props.setContact(data);
         // console.log(data.value)
 
-        axios.get('/api/skyContactDetails/' + data.value)
+        axios.get('/data/skyContactDetails/' + data.value)
         .then(result => {
             // console.log(result.data[0]);
 

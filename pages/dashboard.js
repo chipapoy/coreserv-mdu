@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Headertop from "../components/Layouts/Headertop";
 import Pagetop from "../components/Layouts/Pagetop";
 import { useAuth } from '@/hooks/auth';
-import axios from "axios";
+import axios from '@/lib/axios'
 import MUIDataTable, { TableHead } from "mui-datatables";
 import TableOptions from "../components/Dashboard/TableOptions";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -177,7 +177,7 @@ const Dashboard = () => {
 
     const getData = async () => {
 
-        const result = await axios.get('http://localhost:8000/api/dashboardList');
+        const result = await axios.get('/data/dashboardList');
 
         setData(result.data);
     };

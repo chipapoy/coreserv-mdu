@@ -26,7 +26,7 @@ const UpdateForm = (props) => {
 
     useEffect( () => {
 
-      axios.get('/api/skyInitContactPerson/' + props.initialData[6])
+      axios.get('/data/skyInitContactPerson/' + props.initialData[6])
       .then(result => {
         setInitContact(result.data[0]);
       })
@@ -41,7 +41,7 @@ const UpdateForm = (props) => {
         props.setContact(data.label);
         console.log(data.value)
 
-        axios.get('/api/skyContactDetails/' + data.value)
+        axios.get('/data/skyContactDetails/' + data.value)
         .then(result => {
             console.log(result.data[0]);
 

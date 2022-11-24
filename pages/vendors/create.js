@@ -62,7 +62,7 @@ const Createvendor = () => {
 
     useEffect(() => {
       // getCity();
-      axios.get('/api/cityList')
+      axios.get('/data/cityList')
       .then(result => {
         setCity(result.data);
       })
@@ -107,7 +107,7 @@ const Createvendor = () => {
       const JSONdata = JSON.stringify(data)
   
       // API endpoint where we send form data.
-      const url = '/api/insertData'
+      const url = '/data/insertData'
 
       axios.post(url, data)
       .then( res => {

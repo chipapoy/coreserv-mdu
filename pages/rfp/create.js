@@ -44,7 +44,7 @@ const Createrfp = () => {
 
     useEffect(() => {
       // getCity();
-      axios.get('/api/cityList')
+      axios.get('/data/cityList')
       .then(result => {
         setArea(result.data);
       })
@@ -52,7 +52,7 @@ const Createrfp = () => {
         console.log(error);
       });
 
-      axios.get('/api/vendorNameList')
+      axios.get('/data/vendorNameList')
       .then(result => {
         setVendor(result.data);
       })
@@ -60,7 +60,7 @@ const Createrfp = () => {
         console.log(error);
       });
 
-      axios.get('/api/skyContact')
+      axios.get('/data/skyContact')
       .then(result => {
         setContactData(result.data);
       })
@@ -111,7 +111,7 @@ const Createrfp = () => {
       const JSONdata = JSON.stringify(data)
   
       // API endpoint where we send form data.
-      const url = '/api/newRfp'
+      const url = '/data/newRfp'
 
       axios.post(url, data)
       .then( res => {

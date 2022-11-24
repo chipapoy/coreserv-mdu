@@ -45,7 +45,7 @@ const Updaterfp = (props) => {
 
     useEffect(() => {
       // getCity();
-      axios.get('/api/cityList')
+      axios.get('/data/cityList')
       .then(result => {
         setAreaData(result.data);
       })
@@ -53,7 +53,7 @@ const Updaterfp = (props) => {
         console.log(error);
       });
 
-      axios.get('/api/vendorNameList')
+      axios.get('/data/vendorNameList')
       .then(result => {
         setVendor(result.data);
       })
@@ -61,7 +61,7 @@ const Updaterfp = (props) => {
         console.log(error);
       });
 
-      axios.get('/api/skyContact')
+      axios.get('/data/skyContact')
       .then(result => {
         setContactData(result.data);
       })

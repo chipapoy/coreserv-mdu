@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Headertop from "../components/Layouts/Headertop";
 import Pagetop from "../components/Layouts/Pagetop";
 import { useAuth } from '@/hooks/auth';
-import axios from "axios";
+import axios from '@/lib/axios'
 import MUIDataTable, { TableHead } from "mui-datatables";
 import TableOptions from "../components/Vendor/TableOptions";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -113,7 +113,7 @@ const Vendors = () => {
 
     const getData = async () => {
 
-        const result = await axios.get('http://localhost:8000/api/vendorList');
+        const result = await axios.get('/data/vendorList');
 
         setData(result.data);
     };
