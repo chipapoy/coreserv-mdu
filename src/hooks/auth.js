@@ -89,11 +89,11 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     }
 
     const logout = async () => {
-        if (! error) {
-            await axios
-                .post('/logout')
-                .then(() => mutate())
-        }
+        // if (! error) {
+        //     await axios
+        //         .post('/logout')
+        //         .then(() => mutate())
+        // }
 
         window.location.pathname = '/login'
     }
