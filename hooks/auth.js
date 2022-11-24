@@ -123,7 +123,6 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
 
     return {
         user,
-        csrf,
         register,
         login,
         forgotPassword,
